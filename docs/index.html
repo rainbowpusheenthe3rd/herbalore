@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herbalore</title>
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#06140d; --bg2:#0f2a1b; --fg:#e3f3e6; --accent:#9fd3a8; --muted:#86a890; }
+* { box-sizing: border-box; }
+body { margin:0; background:linear-gradient(var(--bg), var(--bg2)) fixed; color:var(--fg); font:16px/1.65 Inter, system-ui, sans-serif; }
+header img { width:100%; display:block; max-height:360px; object-fit:cover; }
+main { max-width:760px; margin:0 auto; padding:0 16px 64px; }
+.title { display:flex; gap:16px; align-items:center; margin:-48px 0 8px; position:relative; }
+.title img { width:96px; height:96px; filter:drop-shadow(0 0 18px color-mix(in srgb, var(--accent) 45%, transparent)); }
+h1 { font:600 3rem/1 'Cormorant Garamond', serif; margin:40px 0 0; color:var(--accent); }
+h2 { font:600 1.7rem 'Cormorant Garamond', serif; color:var(--accent); margin:40px 0 8px; border-bottom:1px solid color-mix(in srgb, var(--accent) 25%, transparent); }
+.tag { font:italic 500 1.3rem 'Cormorant Garamond', serif; color:var(--muted); margin:0 0 24px; }
+a { color:var(--accent); }
+li { margin:6px 0; }
+figure { margin:14px 0; padding:12px 14px; border-radius:10px; background:color-mix(in srgb, var(--accent) 7%, transparent); }
+figcaption b { display:block; color:var(--accent); } figcaption span { color:var(--muted); font-size:.92rem; }
+audio { width:100%; margin-top:8px; }
+table { border-collapse:collapse; width:100%; } td { padding:6px 8px; border-bottom:1px solid color-mix(in srgb, var(--accent) 15%, transparent); }
+code { color:var(--accent); }
+footer { color:var(--muted); font-size:.85rem; margin-top:48px; }
+</style></head>
+<body><header><img src="banner.png" alt=""></header>
+<main>
+<div class="title"><img src="icon.png" alt=""><h1>Herbalore</h1></div>
+<p class="tag">A voice for every herb.</p>
+<p><a href="https://github.com/rainbowpusheenthe3rd/herbalore">Source and download</a> · drop the <code>Herbalore</code> folder into <code>Interface\AddOns</code>.</p>
+<h2>Listen</h2>
+<figure><figcaption><b>Peacebloom</b><span>One of Peacebloom's three lines.</span></figcaption>
+<audio controls preload="none" src="audio/peacebloom_2.mp3"></audio></figure>
+<figure><figcaption><b>Silverleaf</b><span>One of Silverleaf's three lines.</span></figcaption>
+<audio controls preload="none" src="audio/silverleaf.mp3"></audio></figure>
+<h2>What it does</h2>
+<ul><li><b>Every herb has three lines,</b> from Peacebloom to Black Lotus: what it is, where it likes to grow, or something worth noticing. The ones you haven't heard come first.</li>
+<li><b>Nothing nags.</b> Each line, and each herb, rests longer every time it's spoken (5 minutes, then 10, then 20 for a herb; 20, 40, 80 for a line), so an evening's gathering stays fresh.</li>
+<li><b>Quiet lines.</b> Now and then, instead of a herb's line, a word about slowing down: gathering as a kind of listening.</li>
+<li><b>Skinning.</b> A word of thanks the first time each session, then now and then. Every hide is a life given.</li>
+<li><b>Shares the air with Shan'do.</b> Never in combat, never within 45 seconds of Shan'do or of itself.</li>
+<li><b>A notebook.</b> Account-wide, Herbalore notes where each herb was picked (for drawing herb routes) and anything gathered that has no line yet (so it can get one). It stays in your saved variables.</li>
+<li><b>Minimap button</b> at half opacity: left-click for the guide, right-click to turn it off or on, drag to move.</li></ul>
+<h2>Commands</h2>
+<table><tr><td><code>/herbalore</code></td><td>turn it off or on</td></tr>
+<tr><td><code>/herbalore help</code></td><td>the in-game guide</td></tr></table>
+<h2>Why</h2>
+<p>Made for immersion, meditation, repair and growth while wearing a night elf's face. It invites and never instructs, speaks about the world and the deed rather than the self, and stays in Azeroth. It is company, not therapy.</p>
+<p>Every choice, and its evidence, is in <a href="https://github.com/rainbowpusheenthe3rd/shando/blob/main/RESEARCH.md">RESEARCH.md</a>.</p>
+<footer>The voice is AI-generated (VoxCPM2, Apache-2.0), designed once and used for every line. All other sounds are synthesised from scratch. Not affiliated with or endorsed by Blizzard Entertainment; World of Warcraft names belong to Blizzard. Code and assets: MIT.</footer>
+</main></body></html>
