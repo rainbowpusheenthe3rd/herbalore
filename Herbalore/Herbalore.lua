@@ -89,14 +89,23 @@ local function Note(herb)
     if #t > MAX_PICKS then table.remove(t, 1) end
 end
 
+-- Found alongside a herb (Forever's scarce finds and seeds) or rare in itself: these speak instead of the herb.
+local RARE = {
+    ["Black Lotus"] = true, ["Death Lotus"] = true, ["Frilled Lichen"] = true, ["Rosecap"] = true,
+    ["Stranglevine"] = true, ["Commonplace Herb Seeds"] = true, ["Uncommon Herb Seeds"] = true,
+    ["Unusual Herb Seeds"] = true, ["Scarce Herb Seeds"] = true,
+}
+
 local f = CreateFrame("Frame")
 f:RegisterEvent("LOOT_OPENED")
 f:SetScript("OnEvent", function()
-    local herb, skin, node = nil, false, FromNode()
+    local herb, rare, skin, node = nil, nil, false, FromNode()
     for i = 1, GetNumLootItems() do
         local name = select(2, GetLootSlotInfo(i))
         if name then
-            if ns.HERBS[name] then
+            if ns.HERBS[name] and RARE[name] then
+                rare = rare or name
+            elseif ns.HERBS[name] then
                 herb = herb or name
             elseif node then
                 HerbaloreUnknown = HerbaloreUnknown or {}
@@ -106,10 +115,13 @@ f:SetScript("OnEvent", function()
             end
         end
     end
+    herb = herb or rare  -- the node's own herb goes in the notebook; a rare find alongside it is what she speaks of
     if herb then Note(herb) HerbaloreSession = (HerbaloreSession or 0) + 1 end  -- read by Shan'do's look-back
     if skin then SkinSession = (SkinSession or 0) + 1 end
     if HerbaloreOff or InCombatLockdown() or GetTime() - (AlbaLast or -GAP) < GAP then return end
-    if herb then
+    local spoken = rare or herb
+    if spoken then
+        herb = spoken
         -- the herb itself rests too (HERB_REST, doubling), so one herb's lines don't come one after another
         local gate = "herb:" .. herb
         if HerbReady(gate) and SayOne(ns.HERBS[herb]) then
