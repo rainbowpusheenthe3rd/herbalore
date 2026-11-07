@@ -42,6 +42,6 @@ Every line is in `Herbalore/Lines.lua`. If you'd like to be surprised, don't ope
 ## Credits
 
 The voice is AI-generated with [VoxCPM2](https://huggingface.co/openbmb/VoxCPM2) (Apache-2.0): designed once from a
-description and used for every line, with a soft moonwell reverb. Every other sound, the icon and the banner are
-synthesised from scratch with numpy. Not affiliated with or endorsed by Blizzard Entertainment; World of Warcraft and
-its names belong to Blizzard. Code and assets are MIT licensed.
+description and used for every line, with a soft moonwell reverb. Every other sound is synthesised from scratch with numpy. The icon and the banner are
+drawn in code. Not affiliated with or endorsed by Blizzard Entertainment; World of Warcraft and its names belong to
+Blizzard. Code and the voice files are MIT licensed.
