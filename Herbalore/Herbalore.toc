@@ -2,9 +2,10 @@
 ## IconTexture: Interface\AddOns\Herbalore\icon
 ## Title: Herbalore
 ## Notes: A voice says a line about each herb the first time you pick it each session, now and then a quiet one, and a few for skinning. /herbalore toggles; /herbalore help for the guide.
-## SavedVariablesPerCharacter: HerbaloreOff, HerbaloreSaid, HerbaloreMap
+## SavedVariablesPerCharacter: HerbaloreOff, HerbaloreSaid, HerbaloreMap, HerbalorePace
 ## SavedVariables: HerbalorePicks, HerbaloreUnknown
 Lines.lua
 Herbalore.lua
 Readme.lua
 Minimap.lua
+Options.lua

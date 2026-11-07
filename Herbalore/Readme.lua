@@ -13,8 +13,12 @@ local TEXT = [[
 |cffffd100The notebook|r
 Herbalore quietly keeps a notebook for the whole account: where each herb was picked (for drawing herb routes later), and anything picked from a node that has no line yet (so it can be given one). It is kept in your saved variables and never leaves your computer.
 
+|cffffd100Settings|r
+Left-click the leaf by the minimap (or |cff9fd3a8/herbalore options|r): on or off, and how often herbs speak. Right-click it to turn her off or on; drag it to move it.
+
 |cffffd100Commands|r
   |cff9fd3a8/herbalore|r  turn her off or on
+  |cff9fd3a8/herbalore options|r  settings
   |cff9fd3a8/herbalore help|r  this page
 
 |cff888888Voice: the same designed voice as Shan'do, recorded for each line.|r

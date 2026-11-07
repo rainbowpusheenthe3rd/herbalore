@@ -1,11 +1,12 @@
-<p align="center"><img src="docs/banner.png" alt="Herbalore"></p>
+<p align="center"><img src="docs/banner.png" alt="Herbalore: A voice for every herb."></p>
 
-<h1 align="center"><img src="docs/icon.png" width="56" align="center"> Herbalore</h1>
+<h1 align="center"><img src="docs/icon.png" width="56" align="center" alt="Herbalore icon"> Herbalore</h1>
 <p align="center"><i>A voice for every herb.</i></p>
 <p align="center"><b><a href="https://rainbowpusheenthe3rd.github.io/herbalore/">Listen to it →</a></b></p>
 
-A World of Warcraft addon, voiced in one designed night elf voice. Made for the Forever client (interface 16001,
-also 120105).
+**Herbalore** is a free World of Warcraft addon for **World of Warcraft: Forever** (Classic+) that gives every herb a voice. Pick Peacebloom, Silverleaf or Black Lotus and hear one of three spoken lines about it, in a night elf voice, for herbalists who like to gather slowly.
+
+Made for the World of Warcraft: Forever client (interface 16001, also 120105). Free, open source, no adverts.
 
 ## What it does
 

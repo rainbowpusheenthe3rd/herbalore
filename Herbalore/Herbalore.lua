@@ -18,7 +18,7 @@ HerbaloreSaid = {}  -- replaced by the saved table when it loads
 local BASE, FORGET = 1200, 12 * 3600
 local function Ready(k)
     local s = HerbaloreSaid[k]
-    return not s or time() - s[2] > FORGET or time() - s[2] >= BASE * 2 ^ (s[1] - 1)
+    return not s or time() - s[2] > FORGET or time() - s[2] >= BASE * (HerbalorePace or 1) * 2 ^ (s[1] - 1)
 end
 local function Mark(k)
     local s = HerbaloreSaid[k]
@@ -118,7 +118,7 @@ f:SetScript("OnEvent", function()
     herb = herb or rare  -- the node's own herb goes in the notebook; a rare find alongside it is what she speaks of
     if herb then Note(herb) HerbaloreSession = (HerbaloreSession or 0) + 1 end  -- read by Shan'do's look-back
     if skin then SkinSession = (SkinSession or 0) + 1 end
-    if HerbaloreOff or InCombatLockdown() or GetTime() - (AlbaLast or -GAP) < GAP then return end
+    if HerbaloreOff or InCombatLockdown() or GetTime() - (AlbaLast or -(ShandoGap or GAP)) < (ShandoGap or GAP) then return end
     local spoken = rare or herb
     if spoken then
         herb = spoken
@@ -141,6 +141,7 @@ end)
 SLASH_HERBALORE1 = "/herbalore"
 SlashCmdList.HERBALORE = function(msg)
     if (msg or ""):lower() == "help" then ns.ShowReadme() return end
+    if (msg or ""):lower() == "options" then ns.ShowOptions() return end
     HerbaloreOff = not HerbaloreOff
     print("|cff9fd3a8Herbalore|r: " .. (HerbaloreOff and "off" or "on"))
 end
