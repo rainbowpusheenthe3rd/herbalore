@@ -1,0 +1,8 @@
+package-as: Herbalore
+
+ignore:
+  - tools
+  - tests
+  - docs
+  - README.md
+  - RESEARCH.md

@@ -45,3 +45,18 @@ The voice is AI-generated with [VoxCPM2](https://huggingface.co/openbmb/VoxCPM2)
 description and used for every line, with a soft moonwell reverb. Every other sound is synthesised from scratch with numpy. The icon and the banner are
 drawn in code. Not affiliated with or endorsed by Blizzard Entertainment; World of Warcraft and its names belong to
 Blizzard. Code and the voice files are MIT licensed.
+
+## Talks to
+
+Shares the herb session with Shan'do (`HerbaloreSession`, `ShandoGap`).
+
+## Releasing
+
+```sh
+git tag -a v1.2.0 -m "1.2.0" && git push origin v1.2.0      # builds the zip, makes the GitHub Release
+git tag cf-v1.2.0 v1.2.0 && git push origin cf-v1.2.0        # uploads that same build to CurseForge
+```
+
+The CurseForge upload needs, once per repository: the variable `CURSEFORGE_PROJECT_ID` and the secret
+`CF_API_TOKEN` (Settings → Secrets and variables → Actions). The game versions come from the `.toc`'s
+`## Interface` line (16001 is WoW: Forever).
