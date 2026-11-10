@@ -99,7 +99,7 @@ local RARE = {
 local f = CreateFrame("Frame")
 f:RegisterEvent("LOOT_OPENED")
 f:SetScript("OnEvent", function()
-    local herb, rare, skin, node = nil, nil, false, FromNode()
+    local herb, rare, skin, node, ore = nil, nil, false, FromNode(), nil
     for i = 1, GetNumLootItems() do
         local name = select(2, GetLootSlotInfo(i))
         if name then
@@ -107,6 +107,8 @@ f:SetScript("OnEvent", function()
                 rare = rare or name
             elseif ns.HERBS[name] then
                 herb = herb or name
+            elseif node and name:find(" Ore$") then  -- a vein: where it was goes in the notebook too, for ore loops
+                ore = ore or name
             elseif node then
                 HerbaloreUnknown = HerbaloreUnknown or {}
                 HerbaloreUnknown[name] = (HerbaloreUnknown[name] or 0) + 1
@@ -117,6 +119,7 @@ f:SetScript("OnEvent", function()
     end
     herb = herb or rare  -- the node's own herb goes in the notebook; a rare find alongside it is what she speaks of
     if herb then Note(herb) HerbaloreSession = (HerbaloreSession or 0) + 1 end  -- read by Shan'do's look-back
+    if ore and not herb then Note(ore) end  -- HerbalorePicks["Copper Ore"] and so on; tools/forever_runs.py reads them
     if skin then SkinSession = (SkinSession or 0) + 1 end
     if HerbaloreOff or InCombatLockdown() or GetTime() - (AlbaLast or -(ShandoGap or GAP)) < (ShandoGap or GAP) then return end
     local spoken = rare or herb
